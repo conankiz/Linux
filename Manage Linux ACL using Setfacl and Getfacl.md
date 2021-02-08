@@ -88,7 +88,15 @@ Default mount options:    user_xattr acl
 > $ setfacl -m g:Gadmin:rwx /mnt/data/Public/Admin
 
 ``` sh
-
+# file: Admin/
+# owner: root
+# group: root
+user::rwx
+user:admin1:rwx
+group::r-x
+group:Gadmin:rwx
+mask::rwx
+other::r-x
 ```
 
 <a name="step6"></a>
@@ -117,24 +125,24 @@ Default mount options:    user_xattr acl
 
 <a name="step7"></a>
 ## Step 7: Copying ACL of one file/directory to another
-- Suppose, you want to have the same ACL set of test_folder on test_folder1 too, you can set it by copying the ACL as follows.
+- Suppose, you want to have the same ACL set of Admin folder on Admin_A folder too, you can set it by copying the ACL as follows.
 
-> $ getfacl test_folder/ > acl.txt
+> $ getfacl Admin/ > acl.txt
 
-> $ mkdir test_folder1
+> $ mkdir Admin_A
 
-> $ setfacl -M acl.txt test_folder1/
+> $ setfacl -M acl.txt Admin_A/
 
-> $ getfacl test_folder1/
+> $ getfacl Admin_A/
 
 ``` sh
-# file: test_folder1/
+# file: Admin_A/
 # owner: root
 # group: root
 user::rwx
-user:test:rwx
+user:admin1:rwx
 group::r-x
-group:testg:-w-
+group:Gadmin:-w-
 mask::rwx
 other::r-x
 ```
