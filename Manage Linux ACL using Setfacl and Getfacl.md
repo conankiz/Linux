@@ -66,7 +66,7 @@ UUID=456346 	/mnt/data 		ext4 defaults,user_xattr,acl
 Default mount options:    user_xattr acl
 ```
 
--  remount
+-  If your filesystem has not been mounted with the ‘acl’ option, you can re-mount it giving the needed option:
 
 > $ mount -o remount /mnt/data
 
