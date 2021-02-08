@@ -121,7 +121,7 @@ other::r-x
 -m, --modify
        Options to modify the ACL of a file or directory.
 
-# setfacl -Rdm u:www-data:rwx,u:ddn:rwx shared/web/cache
+> $ setfacl -Rdm u:www-data:rwx,u:ddn:rwx shared/web/cache
 
 <a name="step7"></a>
 ## Step 7: Copying ACL of one file/directory to another
